@@ -1,0 +1,16 @@
+.btn {
+    border: 1px solid var(--white);
+    background-color: var(--black);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    height: 30px;
+}
+
+.btn:hover {
+    order: 1px solid var(--black);
+    background-color: var(--white);
+    color: var(--black);
+}
