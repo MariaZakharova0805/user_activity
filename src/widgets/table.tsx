@@ -20,14 +20,20 @@ export const Table: FC<TableProps> = ({ data, columns }) => {
     <table {...getTableProps()} className="table">
       <thead >
         {headerGroups.map(headerGroup => (
-           <tr {...headerGroup.getHeaderGroupProps()}>
-           {headerGroup.headers.map((column) => (
-             <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-               {column.render("Header")}
-               <SortingHeader column={column}/>
-             </th>
-           ))}
-         </tr>
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => {
+              if (column.id === "del") {
+                return <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  <div className="table_headers">{column.render("Header")}</div>
+                </th>
+              } else {
+                return <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  <div className="table_headers">{column.render("Header")}
+                    <SortingHeader column={column} /></div>
+                </th>
+              }
+            })}
+          </tr>
         ))}
       </thead>
       <tbody {...getTableBodyProps()}>

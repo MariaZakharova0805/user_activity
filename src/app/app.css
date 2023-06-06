@@ -28,15 +28,22 @@ html {
 }
 
 /* Nav Bar Router Link styles */
-.sidebar__navLink {
+.sidebar__navLink,
+.sidebar__navLink_active {
   display: block;
   text-decoration: none;
   padding: 10px 0;
   white-space: nowrap;
   color: var(--dark-white);
+  font-size: 20px;
   font-weight: 100;
   transition: 0.3s;
   height: 30px;
+}
+
+.sidebar__navLink svg,
+.sidebar__navLink_active svg {
+  margin-bottom: -5px;
 }
 
 .sidebar__navLink:hover {
@@ -44,13 +51,9 @@ html {
 }
 
 .sidebar__navLink_active {
-  display: block;
-  text-decoration: none;
-  padding: 10px 0;
-  white-space: nowrap;
   font-weight: 800;
   color: var(--white);
-  height: 30px;
+
 }
 
 /* Table styles */
@@ -66,6 +69,31 @@ html {
 
 .table__row:nth-child(odd) {
   background: var(--dark-grey);
+}
+
+.table_icon *:hover {
+  transition: 0.5s;
+  cursor: pointer;
+  color: var(--dark-white);
+}
+
+.table_headers {
+  display: flex;
+  flex-direction: row;
+  font-size: 20px;
+}
+
+.table_headers svg {
+  margin-left: 10px;
+}
+
+.textInt_input {
+  border-radius: 5px;
+  background-color: var(--dark-white);
+  border: none;
+  outline: none;
+  height: 22px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
@@ -90,21 +118,7 @@ html {
 
 }
 
-/* Table styles */
-.table_icon *:hover {
-  transition: 0.5s;
-  cursor: pointer;
-  color: var(--dark-white);
-}
 
-.textInt_input {
-  border-radius: 5px;
-  background-color: var(--dark-white);
-  border: none;
-  outline: none;
-  height: 22px;
-  cursor: pointer;
-}
 
 /* Dictionary text input*/
 .textInt {

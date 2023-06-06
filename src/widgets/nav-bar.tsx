@@ -23,7 +23,7 @@ export const Navbar = () => {
                     ? ""
                     : "sidebar__navLink"
               }
-            ><span>{link.icon} {link.text}</span>
+            ><div>{link.icon} {link.text}</div>
             </NavLink>
           </li>
         ))}
