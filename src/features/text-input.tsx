@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { ChangeEvent, FC, useEffect, useState } from 'react'
 import DoneIcon from '@mui/icons-material/Done';
 import { editDictionaryItem } from "../shared/api";
 import { useDictionaryStore } from '../pages/dictionary/use-dictionary-store';
@@ -19,7 +19,7 @@ const TextInput: FC<TextInputProps> = ({ item }) => {
   }, [item.value]);
 
   //Изменение текста события
-  const handleValueChange = (e) => {
+  const handleValueChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCellValue(e.target.value)
     setActiveBtn(true)
   }

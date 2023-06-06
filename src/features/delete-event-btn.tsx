@@ -6,7 +6,7 @@ import { FC } from 'react';
 const DeleteEventBtn: FC<{ item: any }>  = ({ item }) => {
   const { removeItem } = useDictionaryStore(state => state);
 
-  const removeEvent = (item) => {
+  const removeEvent = (item: { row: { values: { key: string; }; }; }) => {
     deleteDictionaryItem(item.row.values.key)
     removeItem(item.row.values.key)
   }

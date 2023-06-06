@@ -1,10 +1,10 @@
-import React from "react";
 import SortOutlinedIcon from "@mui/icons-material/SortOutlined";
 import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
 import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import { Typography } from "@mui/material";
+import { FC } from "react";
 
-const SortingHeader = ({ column }) => {
+const SortingHeader: FC<{ column: any }> = ({column}) => {
   return (
     <Typography>
       {column.isSorted ? (

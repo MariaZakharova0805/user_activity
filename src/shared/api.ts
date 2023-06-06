@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Constants } from './constants';
 import { Dictionary } from '../pages/dictionary/types';
-import { Events, FilterData } from '../pages/events/types';
+import { FilterData } from '../pages/events/types';
 
 type FetchDictionary = () => Promise<Dictionary[]>
 // const url = Constants.BASE_URL;
