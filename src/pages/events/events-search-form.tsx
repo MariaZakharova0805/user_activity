@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { useEvents } from "./use-events-store";
-import { Button } from "../../shared/ui/button/button";
-import { fetchEvents } from "../../shared/api";
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useEvents } from './use-events-store';
+import { Button } from 'shared/ui/button/button';
+import { fetchEvents } from 'shared/api';
 
 const EventsSearchForm = () => {
   const { setItems, urlParams, filterData, setFilterData } = useEvents(state => state);
@@ -12,21 +12,21 @@ const EventsSearchForm = () => {
     watch
   } = useForm({
     defaultValues: {
-      fromDate: urlParams.fromDate ? urlParams.fromDate : "",
-      toDate: urlParams.toDate ? urlParams.toDate : ""
+      fromDate: urlParams.fromDate ? urlParams.fromDate : '',
+      toDate: urlParams.toDate ? urlParams.toDate : ''
     },
   });
 
   useEffect(() => {
     setFilterData(urlParams)
-  }, [urlParams]);
+  }, [urlParams, setFilterData]);
 
   useEffect(() => {
     const subscription = watch((value) => {
       setFilterData(value)
     });
     return () => subscription.unsubscribe();
-  }, [watch]);
+  }, [watch, setFilterData]);
 
   const onSubmit = async () => {
     const events = await fetchEvents(filterData);

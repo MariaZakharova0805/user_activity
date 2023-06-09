@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import { NavLink } from 'react-router-dom'
+import AutoGraphIcon from '@mui/icons-material/AutoGraph'
+import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 
 const menuLinks = [
-  { id: 1, href: `/events`, text: "События", icon: <AutoGraphIcon /> },
-  { id: 2, href: `/dictionary`, text: "Справочник", icon: <AutoStoriesIcon /> },
+  { id: 1, href: '/events', text: 'События', icon: <AutoGraphIcon /> },
+  { id: 2, href: '/dictionary', text: 'Справочник', icon: <AutoStoriesIcon /> },
 ]
 
 export const Navbar = () => {

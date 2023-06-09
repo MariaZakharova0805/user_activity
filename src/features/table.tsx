@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { useTable, useSortBy } from "react-table";
-import TextInput from "../features/text-input";
-import DeleteEventBtn from "../features/delete-event-btn";
+import { FC } from 'react'
+import { useTable, useSortBy } from 'react-table'
+import TextInput from 'features/text-input'
+import DeleteEventBtn from 'features/delete-event-btn'
 
 interface Column { Header: string, accessor: string }
 

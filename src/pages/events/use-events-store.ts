@@ -10,7 +10,7 @@ type useEvents = {
   urlParams:UrlParams,
 
   setItems: (items: Events[]) => void,
-  setFilterData: (filterData: Object) => void,
+  setFilterData: (filterData: FilterData) => void,
 }
 
 export const useEvents = create<useEvents>(set => ({

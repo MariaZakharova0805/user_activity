@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { Constants } from './constants';
-import { Dictionary } from '../pages/dictionary/types';
-import { FilterData } from '../pages/events/types';
+import { BASE_URL } from '../constants';
+import { DictionaryElement } from 'pages/dictionary/types';
+import { FilterData } from 'pages/events/types';
 
-type FetchDictionary = () => Promise<Dictionary[]>
+type FetchDictionary = () => Promise<DictionaryElement[]>
 // const url = Constants.BASE_URL;
-const urlDictionary = `${Constants.BASE_URL}/dictionary`;
+const urlDictionary = `${BASE_URL}/dictionary`;
 
 export const fetchDictionary: FetchDictionary = async () => {
   try {
@@ -17,7 +17,7 @@ export const fetchDictionary: FetchDictionary = async () => {
   }
 }
 
-export const addDictionaryItem = async ({ key, text }: Dictionary): Promise<boolean> => {
+export const addDictionaryItem = async ({ key, text }: DictionaryElement): Promise<boolean> => {
   try {
     axios.post(urlDictionary, { event: key, text })
     return true
@@ -46,7 +46,7 @@ export const deleteDictionaryItem = async (deletedItem: string) => {
 }
 
 
-const urlEvents = `${Constants.BASE_URL}/events`;
+const urlEvents = `${BASE_URL}/events`;
 export const fetchEvents = async ({ fromDate, toDate }: FilterData) => {
   try {
     const response = await axios.get(`${urlEvents}/?fromDate=${fromDate}&toDate=${toDate}`);

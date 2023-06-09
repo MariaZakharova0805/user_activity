@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './app/app'
 import ErrorPage from './pages/error-page/error-page'
-import { Dictionary } from './pages/dictionary'
+import { DictionaryPage } from 'pages/dictionary'
 import { Events } from './pages/events/events'
 import { Normalize } from 'styled-normalize'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dictionary",
-        element: <Dictionary />,
+        element: <DictionaryPage />,
       },
       {
         path: "/events",

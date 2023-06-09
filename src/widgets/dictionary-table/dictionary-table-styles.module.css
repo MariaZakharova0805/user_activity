@@ -1,0 +1,10 @@
+.dictionaryTable { width: 100%; border-collapse: collapse; }
+.dictionaryTable thead .dictionaryTableKey { text-align: left; width: 200px; }
+.dictionaryTable thead .dictionaryTableText { text-align: left; }
+.dictionaryTable thead .dictionaryTableDel { width: 20px; }
+.dictionaryTable tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.dictionaryTable tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
