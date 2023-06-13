@@ -18,12 +18,21 @@ export const Table: FC<TableProps> = ({ data, columns }) => {
 
   return (
     <table {...getTableProps()} className="table">
-      <thead>
+      <thead >
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-            ))}
+            {headerGroup.headers.map((column) => {
+              if (column.id === "del") {
+                return <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  <div className="table_headers">{column.render("Header")}</div>
+                </th>
+              } else {
+                return <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  <div className="table_headers">{column.render("Header")}
+                    <SortingHeader column={column} /></div>
+                </th>
+              }
+            })}
           </tr>
         ))}
       </thead>
@@ -33,15 +42,15 @@ export const Table: FC<TableProps> = ({ data, columns }) => {
           return (
             <tr {...row.getRowProps()} className="table__row">
               {row.cells.map(cell => {
-                if (cell.column.id == 'text') {
+                if (cell.column.id === 'text') {
                   //Колонка с ячейкой-инпутом с функцией изменение и сохранения
                   return <td {...cell.getCellProps()}>
-                    <TextInput item={cell}/>
+                    <TextInput item={cell} />
                   </td>
-                } else if (cell.column.id == 'del') {
+                } else if (cell.column.id === 'del') {
                   //Колонка с ячейкой с кнопкой удалить
                   return <td {...cell.getCellProps()}>
-                    <DeleteEventBtn item={cell}/>
+                    <DeleteEventBtn item={cell} />
                   </td>
                 }
                 else {
