@@ -1,17 +1,23 @@
-import { shallow } from 'zustand/shallow'
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
-import { useDictionaryStore, selectorDictionaryItems } from 'entities/dictionary'
+import { useDictionaryTable } from './use-dictionary-table'
 import { columns } from './dictionary-table-columns'
 import styles from './dictionary-table-styles.module.css'
+import { DictionaryElement } from 'entities/dictionary'
 
 export const DictionaryTable = () => {
-  const dictionaryItems = useDictionaryStore(selectorDictionaryItems, shallow)
+  const { items, sortState, setSortState } = useDictionaryTable()
 
-  const table = useReactTable({
-    data: dictionaryItems,
+  const table = useReactTable<DictionaryElement>({
+    data: items,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getRowId: ({ key }) => key,
+    state: { sorting: sortState },
+    onSortingChange: setSortState,
+    // Кастомная сортировка не завелась, пришлось писать костыль 
+    sortingFns: {
+      customSorting: () => 0
+    }
   })
 
   return (

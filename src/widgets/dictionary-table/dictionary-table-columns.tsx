@@ -1,35 +1,49 @@
-import { ColumnDef } from '@tanstack/react-table'
-import { DictionaryElement } from 'entities/dictionary'
-import { TextCell, RemoveCell } from './components'
+import { ColumnDef, CellContext } from '@tanstack/react-table'
+import { DictionaryElement, removeDictionaryItem, updateDictionaryItem, addDictionaryItem } from 'entities/dictionary'
+import { RemoveCell, TextCell, sortHeaderCell } from 'features/table'
 import styles from './dictionary-table-styles.module.css'
 
 type Column = ColumnDef<DictionaryElement>
+type Cell = (props: CellContext<DictionaryElement, unknown>) => JSX.Element
+
+const removeHandler = (dictionaryKey: string) => () => {
+  removeDictionaryItem(dictionaryKey)
+}
+const saveHandler = ({ key, unsaved }: DictionaryElement) => (text: string) => {
+  (unsaved ? addDictionaryItem : updateDictionaryItem)({ key, text })
+}
+
+const actionCell:Cell = props => (
+  <RemoveCell onClick={ removeHandler(props.row.original.key) } />
+)
+const textCell:Cell = ({ row: { original } }) => (
+  <TextCell text={ original.text } onSave={ saveHandler(original) } key={ original.key } />
+)
 
 export const columns: Column[] = [
   {
-    header: 'Ключ события',
+    id: 'key',
+    header: sortHeaderCell<DictionaryElement>('Код события'),
     accessorKey: 'key',
-    meta: {
-      className: styles.dictionaryTableKey
-    }
+    meta: { className: styles.key },
+    enableSorting: true
+    
   },
   {
-    header: 'Описание события',
+    id: 'text',
+    header: sortHeaderCell<DictionaryElement>('Описание события'),
     accessorKey: 'text',
-    cell: ({ row: { original: { key, text } } }) => (
-      <TextCell dictionaryKey={ key } text={ text } key={ key } />
-    ),
-    meta: {
-      className: styles.dictionaryTableText
-    }
+    cell: textCell,
+    meta: { className: styles.text },
+    enableSorting: true
   },
   {
     id: 'actions',
     header: '',
     accessorKey: 'key',
-    cell: ({ row: { original: { key } } }) => (<RemoveCell dictionaryKey={key} />),
+    cell: actionCell,
     meta: {
-      className: styles.dictionaryTableDel
+      className: styles.del
     }
   }
 ]

@@ -5,3 +5,9 @@ declare module '@tanstack/react-table' {
     className?: string
   }
 }
+
+declare module '@tanstack/table-core' {
+  interface SortingFns {
+    customSorting: SortingFn<unknown>
+  }
+}
