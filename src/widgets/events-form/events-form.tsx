@@ -4,10 +4,9 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { FilterEventsElement } from 'entities/events'
 import { useEventsStore } from 'entities/events'
 import { fetchEventsItems } from 'entities/events'
-import { fetch } from 'entities/dictionary/dictionary.api'
 
 export const EventsForm = () => {
-  const { items, setItems, filterData, setFilterData } = useEventsStore(state => state);
+  const { filterData, setFilterData } = useEventsStore(state => state);
   const { register, handleSubmit, watch } = useForm<FilterEventsElement>()
 
   React.useEffect(() => {

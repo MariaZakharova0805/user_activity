@@ -26,5 +26,3 @@ export const fetchEventsItems = async (filterData: FilterData) => {
     useEventsStore.setState({ items: items })
   })
 }
-// далее вызывается в events-form.tsx при нажатии submitButton
-
