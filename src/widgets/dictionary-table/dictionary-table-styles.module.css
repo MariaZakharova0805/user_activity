@@ -1,4 +1,4 @@
-.dictionaryTable { margin: 16px 0px; width: 100%; border-collapse: collapse; }
+/* .dictionaryTable { margin: 16px 0px; width: 100%; border-collapse: collapse; }
 .dictionaryTable thead .key { text-align: left; width: 400px; }
 .dictionaryTable thead .text { text-align: left; }
 .dictionaryTable thead .del { width: 20px; }
@@ -8,4 +8,4 @@
 .dictionaryTable tbody .key { padding: 4px; }
 .dictionaryTable tbody .text { padding: 4px; }
 .dictionaryTable tbody .del > div { display: none; }
-.dictionaryTable tbody tr:hover .del > div { display: block; }
+.dictionaryTable tbody tr:hover .del > div { display: block; } */

@@ -3,6 +3,8 @@ import { useDictionaryTable } from './use-dictionary-table'
 import { columns } from './dictionary-table-columns'
 import styles from './dictionary-table-styles.module.css'
 import { DictionaryElement } from 'entities/dictionary'
+import { Table, TableBody, TableHead } from '@mui/material';
+import { StyledTableCell, StyledTableRow } from './dictionary-table-styles'
 
 export const DictionaryTable = () => {
   const { items, sortState, setSortState } = useDictionaryTable()
@@ -21,34 +23,34 @@ export const DictionaryTable = () => {
   })
 
   return (
-    <table className={ styles.dictionaryTable }>
-      <thead>
+    <Table sx={{ minWidth: 650 }} size="medium" aria-label="a dense table" className={styles.dictionaryTable}>
+      <TableHead>
         {table.getHeaderGroups().map(headerGroup => (
-          <tr key={headerGroup.id}>
+          <StyledTableRow key={headerGroup.id}>
             {headerGroup.headers.map(header => (
-              <th className={header.column.columnDef.meta?.className} key={header.id}>
+              <StyledTableCell className={header.column.columnDef.meta?.className} key={header.id}>
                 {header.isPlaceholder
                   ? null
                   : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-              </th>
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+              </StyledTableCell>
             ))}
-          </tr>
+          </StyledTableRow>
         ))}
-      </thead>
-      <tbody>
+      </TableHead>
+      <TableBody>
         {table.getRowModel().rows.map(row => (
-          <tr key={row.id}>
+          <StyledTableRow key={row.id}>
             {row.getVisibleCells().map(cell => (
-              <td className={cell.column.columnDef.meta?.className } key={cell.id}>
+              <StyledTableCell className={cell.column.columnDef.meta?.className} key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
+              </StyledTableCell>
             ))}
-          </tr>
+          </StyledTableRow>
         ))}
-      </tbody>
-    </table>
+      </TableBody>
+    </Table>
   )
 }

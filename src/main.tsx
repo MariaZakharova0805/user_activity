@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './app/app'
 import ErrorPage from './pages/error-page/error-page'
 import { DictionaryPage } from 'pages/dictionary'
-import { Events } from './pages/events/events'
+import { Events } from './pages/events/events-page'
 import { Normalize } from 'styled-normalize'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 

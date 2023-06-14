@@ -1,18 +1,19 @@
 @import "./styles/vars.css";
 @import "./styles/nullstyle.css";
-
 body,
 html {
-  background-color: var(--black);
+  color: var(--black);
 }
 
-/* App */
+/* 
+
+
+App 
 .App {
   display: grid;
   grid-template-columns: 200px auto
 }
 
-/* Error Page */
 .error {
   color: white;
   display: flex;
@@ -27,7 +28,6 @@ html {
   color: white;
 }
 
-/* Nav Bar Router Link styles */
 .sidebar__navLink,
 .sidebar__navLink_active {
   display: block;
@@ -56,7 +56,6 @@ html {
 
 }
 
-/* Table styles */
 .table {
   color: var(--white);
   background-color: var(--light-grey);
@@ -102,7 +101,7 @@ html {
   }
 }
 
-/* searchForm */
+
 .searchForm {
   display: flex;
   flex-direction: row;
@@ -120,7 +119,7 @@ html {
 
 
 
-/* Dictionary text input*/
+
 .textInt {
   display: flex;
   flex-direction: row;
@@ -149,4 +148,4 @@ html {
 .textInt_changed:hover {
   color: var(--white);
   cursor: pointer;
-}
+}*/
