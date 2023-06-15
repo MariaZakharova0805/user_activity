@@ -4,9 +4,9 @@ import { BASE_URL } from 'shared/constants';
 
 const urlEvents = `${BASE_URL}/events`;
 
-export const fetch = async (filterData: EventsElement) => {
+export const fetch = async (filterParams: EventsElement) => {
   try {
-    const response = await axios.get(`${urlEvents}/?fromDate=${filterData.fromDate}&toDate=${filterData.toDate}`);
+    const response = await axios.get(`${urlEvents}/?fromDate=${filterParams.fromDate}&toDate=${filterParams.toDate}`);
     return response.data
   }
   catch (err) {

@@ -14,6 +14,4 @@ export type FilterEventsElement = {
     toDate?: string
     event?:string
     cnt?:string
-    unsaved?: boolean
-    unregistered?: boolean
 }

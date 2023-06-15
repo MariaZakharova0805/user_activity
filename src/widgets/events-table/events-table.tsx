@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { useTable, useSortBy  } from "react-table";
+import { useTable  } from "react-table";
 import { useEventsStore } from "entities/events";
 import { columns } from './events-table-columns';
 import { Table, TableHead } from '@mui/material';

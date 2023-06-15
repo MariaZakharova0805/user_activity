@@ -2,27 +2,25 @@ import { EventsElement } from './events.model'
 import { create } from "zustand";
 import { fetch } from './events.api';
 
-interface FilterData { fromDate?: string, toDate?: string }
+interface FilterParams { fromDate?: string, toDate?: string }
 
 type EventsProps = {
-  isFetching: boolean,
   items: EventsElement[],
-  setItems: (items: EventsElement[]) => void,
-  filterData: FilterData,
-  setFilterData: (filterData: FilterData) => void,
+  filterParams: FilterParams,
 }
 
 export const useEventsStore = create<EventsProps>(set => ({
   isFetching: false,
   items: [],
-  setItems: items => set({ items }),
-  filterData: {},
-  setFilterData: filterData => set({ filterData }),
+  filterParams: {},
 }));
 
+export const addFilterParams = (newParams: FilterParams) => {
+  useEventsStore.setState({ filterParams: newParams })
+}
 
-export const fetchEventsItems = async (filterData: FilterData) => {
-  fetch(filterData).then(items => {
+export const fetchEventsItems = async (filterParams: FilterParams) => {
+  fetch(filterParams).then(items => {
     useEventsStore.setState({ items: items })
   })
 }
