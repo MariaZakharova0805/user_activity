@@ -1,7 +1,6 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { ReactNode } from 'react';
 
 const drawerWidth = 180;
 
@@ -14,10 +13,7 @@ interface ResponsiveDrawerProps {
 export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
-
+    const handleDrawerToggle = () => { setMobileOpen(!mobileOpen) };
     const drawer = (
         <div>
             <Toolbar />
@@ -25,7 +21,6 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             {props.Navbar}
         </div>
     );
-
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
