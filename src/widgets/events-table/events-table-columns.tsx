@@ -1,5 +1,5 @@
 export const columns = [
-  { Header: "Событие", accessor: "event" },
-  { Header: "Дата", accessor: "lastDate" },
-  { Header: "Кол-во событий", accessor: "cnt" },
+  { header: "Событие", accessorKey: "event" },
+  { header: "Дата", accessorKey: "lastDate" },
+  { header: "Кол-во событий", accessorKey: "cnt" },
 ]
