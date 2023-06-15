@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import style from "./nav-bar.module.css"
+import { Typography } from '@mui/material';
 
 const menuLinks = [
   { id: 1, href: '/events', text: 'События', icon: <AutoGraphIcon fontSize="small" /> },
@@ -16,7 +17,6 @@ const menuLinks = [
 export const Navbar = () => {
   return (
     <MenuList>
-      <h3>Отчеты:</h3>
       {menuLinks.map((link) => (
         <MenuItem key={link.id}>
           <NavLink
@@ -29,10 +29,10 @@ export const Navbar = () => {
                   : style.sidebar__navLink
             }
           >
-            <ListItemIcon color="text.secondary">
+            <ListItemIcon>
               {link.icon}
             </ListItemIcon>
-            <ListItemText color="text.secondary">{link.text}</ListItemText>
+            <ListItemText>{link.text}</ListItemText>
           </NavLink>
         </MenuItem>
       ))}

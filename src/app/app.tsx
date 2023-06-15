@@ -1,19 +1,12 @@
 import './app.css'
 import { Outlet } from "react-router-dom";
-import { Navbar } from '../widgets/nav-bar';
-import Grid from '@mui/material/Grid';
+import { Navbar } from 'widgets/nav-bar';
+import ResponsiveDrawer from 'widgets/drawer/drawer';
 
 function App() {
   return (
-    <Grid container spacing={0}>
-      <Grid item xs={1}>
-        <Navbar />
-      </Grid>
-      <Grid item xs={11}>
-        <Outlet />
-      </Grid>
-    </Grid>
-  )
+    <ResponsiveDrawer Navbar={<Navbar />} Outlet={<Outlet />} />
+  );
 }
 
 export default App
