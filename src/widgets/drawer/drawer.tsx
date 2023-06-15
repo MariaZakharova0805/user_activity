@@ -1,13 +1,14 @@
 import React, { ReactNode } from 'react';
-import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, CssBaseline, Divider, Drawer, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const drawerWidth = 180;
+const drawerWidth = 230;
 
 interface ResponsiveDrawerProps {
     window?: () => Window;
     Navbar: ReactNode;
     Outlet: ReactNode;
+    SelectParams: ReactNode;
 }
 
 export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
@@ -19,6 +20,12 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
             <Toolbar />
             <Divider />
             {props.Navbar}
+            <Divider />
+            <Grid container spacing={2}>
+                <Grid item xs={12}>
+                    {props.SelectParams}
+                </Grid>
+            </Grid>
         </div>
     );
     const container = window !== undefined ? () => window().document.body : undefined;
@@ -31,6 +38,7 @@ export default function ResponsiveDrawer(props: ResponsiveDrawerProps) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+                    backgroundColor: "black"
                 }}
             >
                 <Toolbar>
