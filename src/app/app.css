@@ -10,7 +10,7 @@
     cursor: pointer;
     transition: 0.5s;
 }
+
 ::-webkit-calendar-picker-indicator:hover {
     background-color: white;
-
 }

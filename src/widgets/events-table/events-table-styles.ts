@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { TableCell, tableCellClasses, TableRow } from '@mui/material';
 
 export const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
+  '&:nth-of-type(even)': {
     backgroundColor: theme.palette.info.main,
   },
   '&:last-child td, &:last-child th': {

@@ -3,7 +3,7 @@ import { useDictionaryTable } from './use-dictionary-table'
 import { columns } from './dictionary-table-columns'
 import styles from './dictionary-table-styles.module.css'
 import { DictionaryElement } from 'entities/dictionary'
-import { Table, TableBody, TableHead } from '@mui/material';
+import { Paper, Table, TableBody, TableContainer, TableHead } from '@mui/material';
 import { StyledTableCell, StyledTableRow } from './dictionary-table-styles'
 
 export const DictionaryTable = () => {
@@ -23,7 +23,8 @@ export const DictionaryTable = () => {
   })
 
   return (
-    <Table sx={{ minWidth: 650 }} size="medium" aria-label="a dense table" className={styles.dictionaryTable}>
+    <TableContainer component={Paper} sx={{ maxHeight: 440 }}>
+      <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 650 }}>
       <TableHead>
         {table.getHeaderGroups().map(headerGroup => (
           <StyledTableRow key={headerGroup.id}>
@@ -52,5 +53,6 @@ export const DictionaryTable = () => {
         ))}
       </TableBody>
     </Table>
+    </TableContainer>
   )
 }

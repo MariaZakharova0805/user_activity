@@ -24,7 +24,7 @@ export const EventsTable = () => {
   })
 
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ maxHeight: 440 }}>
       <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 650 }}>
         <TableHead sx={{ fontSize: '20px' }}>
           {table.getHeaderGroups().map(headerGroup => (
