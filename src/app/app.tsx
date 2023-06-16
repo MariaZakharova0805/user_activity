@@ -5,7 +5,7 @@ import { Navbar } from 'widgets/nav-bar';
 import { SelectParams } from 'widgets/select/select';
 import { AppBar, Box, Button, CssBaseline, Divider, Drawer, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useSelectStore } from 'entities/select-details/select-detaiils.store';
+import { useSelectStore } from 'entities/select/select.store';
 
 const drawerWidth = 230;
 
@@ -28,25 +28,7 @@ function App(props: Props) {
       <Divider />
       <Navbar />
       <Divider />
-      <Box sx={{ minidth: 120, my: 2 }}>
-        <Grid item xs={12}>
-          <SelectParams header={headerDetails} paramsList={listDetails} />
-        </Grid>
-        <Grid item xs={12}>
-          <SelectParams header={headerEvents} paramsList={listEvents} />
-        </Grid>
-        <Grid item xs={12}>
-          <SelectParams header={headerParametrs} paramsList={listParametrs} />
-        </Grid>
-        <Grid item xs={12}>
-          <SelectParams header={headerIndicators} paramsList={listIndicators} />
-        </Grid>
-      </Box>
-      <Divider />
-      <Box sx={{ minidth: 120, m: 1 }}>
-        <Button sx={{ minidth: 100, my: 1 }} variant='outlined'>Сформировать</Button>
-        <Button sx={{ minidth: 100, my: 1 }} variant='outlined'>Скачать</Button>
-      </Box>
+      <SelectParams />
     </div>
   );
   const container = window !== undefined ? () => window().document.body : undefined;

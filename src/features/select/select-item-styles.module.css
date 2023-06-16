@@ -1,0 +1,20 @@
+.label {
+    white-space: nowrap
+}
+
+.select {
+    border-radius: 3px;
+    width: 190px;
+    height: 37px;
+    padding: 5px;
+    border: 1px solid rgb(252, 249, 249);
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.87);
+    outline: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.option:hover {
+    cursor: pointer;
+    color: red;
+}
