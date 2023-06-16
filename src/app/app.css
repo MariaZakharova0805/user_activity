@@ -1,2 +1,16 @@
 @import "./styles/vars.css";
 @import "./styles/nullstyle.css";
+/* body {
+    color: #453b3bdd;
+} */
+
+::-webkit-calendar-picker-indicator {
+    background-color: #a79f9fdd;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+::-webkit-calendar-picker-indicator:hover {
+    background-color: white;
+
+}

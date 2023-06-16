@@ -3,6 +3,7 @@ import AutoGraphIcon from '@mui/icons-material/AutoGraph'
 import AutoStoriesIcon from '@mui/icons-material/AutoStories'
 import { MenuList, MenuItem, ListItemText, ListItemIcon } from '@mui/material';
 import style from "./nav-bar.module.css"
+import React from 'react';
 
 const menuLinks = [
   { id: 1, href: '/events', text: 'События', icon: <AutoGraphIcon fontSize="small" /> },
@@ -10,17 +11,16 @@ const menuLinks = [
 ]
 
 export const Navbar = () => {
+
   return (
     <MenuList>
       {menuLinks.map((link) => (
-        <MenuItem key={link.id}>
-          <NavLink to={`${link.href}`}
-            className={({ isActive, isPending }) =>
-              isActive ? style.sidebar__navLink_active : isPending ? "" : style.sidebar__navLink}>
-            <ListItemIcon>{link.icon}</ListItemIcon>
-            <ListItemText>{link.text}</ListItemText>
-          </NavLink>
-        </MenuItem>
+        <NavLink to={`${link.href}`} key={link.id}
+          className={({ isActive, isPending }) =>
+            isActive ? style.sidebar__navLink_active : isPending ? "" : style.sidebar__navLink}>
+          <MenuItem sx={{ width: "100%" }}><ListItemIcon>{link.icon}</ListItemIcon>
+            <ListItemText >{link.text}</ListItemText></MenuItem>
+        </NavLink>
       ))}
     </MenuList>
   );

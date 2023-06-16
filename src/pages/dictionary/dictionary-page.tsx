@@ -4,11 +4,11 @@ import { DictionaryForm } from 'widgets/dictionary-form'
 
 export const DictionaryPage = () => {
   return (
-    <Container>
+    <>
       <Paper sx={{ paddingX:2, paddingY:1, marginY: 1 }}>
         <DictionaryForm />
       </Paper>
       <DictionaryTable />
-    </Container>
+    </>
   )
 }

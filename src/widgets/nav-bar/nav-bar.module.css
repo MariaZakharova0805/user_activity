@@ -1,2 +1,12 @@
-.sidebar__navLink_active, .sidebar__navLink { color: black; text-decoration: none;display: flex;flex-direction: row;font-weight: 500;}
-.sidebar__navLink_active {font-weight: 900;}
+.sidebar__navLink_active,
+.sidebar__navLink {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.sidebar__navLink_active span {
+    font-weight: 800;
+}
