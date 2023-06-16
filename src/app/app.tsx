@@ -3,12 +3,10 @@ import './app.css'
 import { Outlet } from "react-router-dom";
 import { Navbar } from 'widgets/nav-bar';
 import { SelectParams } from 'widgets/select/select';
-import { AppBar, Box, Button, CssBaseline, Divider, Drawer, Grid, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useSelectStore } from 'entities/select/select.store';
 
 const drawerWidth = 230;
-
 interface Props {
   window?: () => Window;
 }
@@ -17,11 +15,6 @@ function App(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const handleDrawerToggle = () => { setMobileOpen(!mobileOpen) };
-  const { headerDetails, listDetails,
-    headerEvents, listEvents,
-    headerParametrs, listParametrs,
-    headerIndicators, listIndicators } = useSelectStore(state => state);
-
   const drawer = (
     <div>
       <Toolbar />
@@ -110,4 +103,3 @@ export default App
 //     <ResponsiveDrawer Navbar={<Navbar />} Outlet={<Outlet />} SelectParams={<SelectParams/>}/>
 //   );
 // }
-
