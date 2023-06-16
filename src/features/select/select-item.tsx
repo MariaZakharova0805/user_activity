@@ -2,7 +2,6 @@ import React from 'react';
 import { UseFormRegister } from "react-hook-form";
 import { selectListItem } from 'entities/select';
 import c from "./select-item-styles.module.css"
-import { MenuItem,InputLabel ,Select } from '@mui/material';
 
 type SelectItemProps = {
   label: string;
