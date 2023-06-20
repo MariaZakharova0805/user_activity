@@ -7,7 +7,7 @@ import { StyledTableCell, StyledTableRow, StyledTableCellSorting } from './dicti
 import { DictionaryGroupTableSorting } from './dictinaty-group-sorting';
 import { RemoveCell } from 'features/table';
 import { removeDictionaryGroupItem } from 'entities/dictionary-group';
-import { TextCell } from "./text-cell"
+import { TextCell } from "./text-cell-group"
 
 export const DictionaryGroupTable = () => {
   const { items } = useDictionaryGroupStore(state => state);
