@@ -1,7 +1,6 @@
 import { ColumnDef, CellContext } from '@tanstack/react-table'
 import { DictionaryElement, removeDictionaryItem, updateDictionaryItem, addDictionaryItem } from 'entities/dictionary'
 import { RemoveCell, TextCell, sortHeaderCell } from 'features/table'
-import styles from './dictionary-table-styles.module.css'
 
 type Column = ColumnDef<DictionaryElement>
 type Cell = (props: CellContext<DictionaryElement, unknown>) => JSX.Element
@@ -25,7 +24,6 @@ export const columns: Column[] = [
     id: 'key',
     header: sortHeaderCell<DictionaryElement>('Код события'),
     accessorKey: 'key',
-    meta: { className: styles.key },
     enableSorting: true
     
   },
@@ -34,7 +32,6 @@ export const columns: Column[] = [
     header: sortHeaderCell<DictionaryElement>('Описание события'),
     accessorKey: 'text',
     cell: textCell,
-    meta: { className: styles.text },
     enableSorting: true
   },
   {
@@ -42,8 +39,6 @@ export const columns: Column[] = [
     header: '',
     accessorKey: 'key',
     cell: actionCell,
-    meta: {
-      className: styles.del
-    }
+
   }
 ]

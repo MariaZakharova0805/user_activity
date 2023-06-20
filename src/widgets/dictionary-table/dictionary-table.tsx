@@ -1,14 +1,12 @@
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
 import { useDictionaryTable } from './use-dictionary-table'
 import { columns } from './dictionary-table-columns'
-import styles from './dictionary-table-styles.module.css'
 import { DictionaryElement } from 'entities/dictionary'
 import { Paper, Table, TableBody, TableContainer, TableHead } from '@mui/material';
 import { StyledTableCell, StyledTableRow } from './dictionary-table-styles'
 
 export const DictionaryTable = () => {
   const { items, sortState, setSortState } = useDictionaryTable()
-
   const table = useReactTable<DictionaryElement>({
     data: items,
     columns,
@@ -23,7 +21,7 @@ export const DictionaryTable = () => {
   })
 
   return (
-    <TableContainer component={Paper} sx={{ maxHeight: 440 }}>
+    <TableContainer component={Paper} sx={{ maxHeight: "80vh"}}>
       <Table stickyHeader aria-label="sticky table" sx={{ minWidth: 650 }}>
       <TableHead>
         {table.getHeaderGroups().map(headerGroup => (

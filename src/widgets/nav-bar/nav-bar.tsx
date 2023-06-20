@@ -8,10 +8,10 @@ import React from 'react';
 const menuLinks = [
   { id: 1, href: '/events', text: 'События', icon: <AutoGraphIcon fontSize="small" /> },
   { id: 2, href: '/dictionary', text: 'Справочник', icon: <AutoStoriesIcon fontSize="small" /> },
+  { id: 3, href: '/dictionary-group', text: 'Группы', icon: <AutoStoriesIcon fontSize="small" /> },
 ]
 
 export const Navbar = () => {
-
   return (
     <MenuList>
       {menuLinks.map((link) => (

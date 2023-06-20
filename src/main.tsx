@@ -6,6 +6,7 @@ import { DictionaryPage } from 'pages/dictionary'
 import { Events } from './pages/events/events-page'
 import { Normalize } from 'styled-normalize'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { DictionatyGroup } from 'pages/dictionary-group'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/events",
         element: <Events />,
+      },
+      {
+        path: "/dictionary-group",
+        element: <DictionatyGroup/>
       },
     ],
   },
