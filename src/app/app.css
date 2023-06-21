@@ -1,8 +1,5 @@
 @import "./styles/vars.css";
 @import "./styles/nullstyle.css";
-/* body {
-    color: #453b3bdd;
-} */
 
 ::-webkit-calendar-picker-indicator {
     background-color: #a79f9fdd;

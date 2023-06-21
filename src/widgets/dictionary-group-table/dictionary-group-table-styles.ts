@@ -16,22 +16,9 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
     color: theme.palette.common.white,
     fontSize: 18,
     fontWeight: 900,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
-
-export const StyledTableCellSorting = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.common.white,
-    fontSize: 18,
-    fontWeight: 900,
     cursor: "pointer",
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
   },
 }));
-

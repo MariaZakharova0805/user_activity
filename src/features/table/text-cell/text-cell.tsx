@@ -1,3 +1,4 @@
+import { TextField } from '@mui/material'
 import { useState, FC, ChangeEvent } from 'react'
 
 type TextCellProps = {
@@ -25,8 +26,8 @@ export const TextCell: FC<TextCellProps> = ({ text: currentText, onSave, onChang
     <div onClick={() => setEditable(true)}>
       {
         editable ? (
-          <input value={text} onChange={ changeTextHandler } autoFocus onBlur={ blurHandler } />
-        ) : text || <span style={{ color: 'rgba(0,0,0,0.4)' }}><i>Значение не установлено</i></span>
+          <TextField value={text} onChange={changeTextHandler} autoFocus onBlur={blurHandler} size="small" sx={{ width: "190px"}} />
+        ) : text || <div style={{ color: 'rgba(0,0,0,0.4)' }}><i>Значение не установлено</i></div>
       }
     </div>
   )
